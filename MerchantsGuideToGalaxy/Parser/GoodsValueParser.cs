@@ -62,6 +62,7 @@ namespace MerchantsGuideToGalaxy
                 successor.Parse(stringToParse);
                 return;
             }
+
             var productUnits = RomanValueConverter.GetValue(romanValue);
             float productCost =(float) productValue / productUnits;
 

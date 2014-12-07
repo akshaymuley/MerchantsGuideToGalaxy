@@ -8,11 +8,13 @@ namespace MerchantsGuideToGalaxy
 {
     public class VariableMapperParser : StringParser
     {
-        public VariableMapperParser(IGalaxy galaxy) : base(galaxy)
-        {            
+        public VariableMapperParser(IGalaxy galaxy)
+            : base(galaxy)
+        {
         }
 
-        public VariableMapperParser(StringParser successor, IGalaxy galaxy) : base(successor, galaxy)
+        public VariableMapperParser(StringParser successor, IGalaxy galaxy)
+            : base(successor, galaxy)
         {
             this.galaxy = galaxy;
         }
@@ -21,19 +23,26 @@ namespace MerchantsGuideToGalaxy
         {
             var words = stringToParse.Trim().Split(' ');
 
-            if (words.Length != 3)
+            if (!IsValidString(stringToParse))
             {
                 if (successor != null) successor.Parse(stringToParse);
                 return;
             }
-            if(words[1].ToUpper().Equals("IS"))
+            
+            var value = RomanValueConverter.GetValue(words[2]);
+            if (value != 0)
             {
-                var value = RomanValueConverter.GetValue(words[2]);
-                if(value != 0)
-                {
-                    galaxy.AddCurrency(words[0], words[2]);
-                }
+                galaxy.AddCurrency(words[0], words[2]);
             }
+        }
+
+        private bool IsValidString(string stringToParse)
+        {
+            var words = stringToParse.Trim().Split(' ');
+
+            if (words.Length == 3 && words[1].ToUpper().Equals("IS"))
+                return true;
+            return false;
         }
     }
 }

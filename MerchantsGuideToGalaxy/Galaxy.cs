@@ -48,5 +48,14 @@ namespace MerchantsGuideToGalaxy
 
             return romanValue;
         }
+
+        public float GetProductsValue(string productName)
+        {
+            float productValue;
+
+            ProductsValue.TryGetValue(productName, out productValue);
+
+            return productValue;
+        }
     }
 }

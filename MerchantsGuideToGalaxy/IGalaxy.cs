@@ -13,5 +13,7 @@ namespace MerchantsGuideToGalaxy
         void AddProductsValue(string productName, float productValue);
 
         string GetRomanValue(string localCurrency);
+
+        float GetProductsValue(string productName);
     }
 }
