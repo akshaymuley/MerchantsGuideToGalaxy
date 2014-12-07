@@ -8,11 +8,16 @@ namespace MerchantsGuideToGalaxy
 {
     public class QuestionParser : StringParser
     {
-        public QuestionParser(StringParser successor): base(successor)
+        public QuestionParser(IGalaxy galaxy)
+            : base(galaxy)
         {
         }
-        
 
+        public QuestionParser(StringParser successor, IGalaxy galaxy)
+            : base(successor, galaxy)
+        {            
+        }
+        
         public override void Parse(string stringToParse)
         {
             stringToParse = stringToParse.Trim();
@@ -22,7 +27,6 @@ namespace MerchantsGuideToGalaxy
                 if (successor != null) successor.Parse(stringToParse);
                 return;
             }
-
         }
     }
 }

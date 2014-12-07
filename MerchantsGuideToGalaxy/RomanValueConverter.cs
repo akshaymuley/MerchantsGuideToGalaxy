@@ -43,7 +43,7 @@ namespace MerchantsGuideToGalaxy
             }
             catch (Exception)
             {
-                throw new Exception("Invalid input value");
+                return 0;
             }
         }
 

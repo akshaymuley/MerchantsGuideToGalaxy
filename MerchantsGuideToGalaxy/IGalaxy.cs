@@ -8,8 +8,10 @@ namespace MerchantsGuideToGalaxy
 {
     public interface IGalaxy
     {
-        void AddCurrency(string localCurrency, char romanValue);
+        void AddCurrency(string localCurrency, string romanValue);
 
-        void AddProductsValue(string productName, long productValue);
+        void AddProductsValue(string productName, float productValue);
+
+        string GetRomanValue(string localCurrency);
     }
 }

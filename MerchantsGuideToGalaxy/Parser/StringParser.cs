@@ -10,13 +10,16 @@ namespace MerchantsGuideToGalaxy
     {
         internal StringParser successor;
 
-        public StringParser(StringParser successor)
+        internal IGalaxy galaxy;
+
+        public StringParser(IGalaxy galaxy)
         {
-            this.successor = successor;
+            this.galaxy = galaxy;
         }
 
-        public StringParser()
+        public StringParser(StringParser successor, IGalaxy galaxy) : this(galaxy)
         {
+            this.successor = successor;
         }
 
         public abstract void Parse(string stringToParse);
