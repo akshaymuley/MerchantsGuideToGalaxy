@@ -4,3 +4,5 @@ line 2 from feaure branch
 
 feature 1
 feature 2
+
+master
