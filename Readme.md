@@ -11,5 +11,6 @@ master
 master 2
 
 feature B commit 1
+feature B commit 2
 
 commmit 1 after feture B branch
