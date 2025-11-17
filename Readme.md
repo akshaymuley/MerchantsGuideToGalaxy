@@ -6,3 +6,6 @@ feature 1
 feature 2
 
 master
+
+master
+
