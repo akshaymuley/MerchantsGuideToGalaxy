@@ -10,4 +10,6 @@ master
 master
 master 2
 
+feature B commit 1
+
 commmit 1 after feture B branch
