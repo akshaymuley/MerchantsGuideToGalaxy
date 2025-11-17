@@ -8,4 +8,4 @@ feature 2
 master
 
 master
-
+master 2
